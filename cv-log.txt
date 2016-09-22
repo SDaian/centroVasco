@@ -1,0 +1,52 @@
+###############################################################################
+user: nicolas@datcode.com
+pass: datcodeIT14
+###############################################################################
+Bugs
+	#WEB
+	- Cuando no hay ninguna publicación en el LIBRO DE VISITAS aparece el 
+	botón de "Siguiente" igual
+
+	#SISTEMA
+	- AL CLICKEAR EN EDITAR NO ME REDIRIJE A "CREAR NOTICIA"
+	- SE PUBLICAN NOTICIAS DESTACADAS SIN IMAGEN!!!
+	- CUANDO ELIMINO UN ELEMENTO ME REDIRIJE A PENDIENTES; SE PODRÁ RECARGAR EL
+	"VER TODOS"? YA QUE SE VUELVE UN TANTO TEDIOSO A LA HORA DE BORRAR VARIOS
+	MENSAJES.. SINO YA FUE!
+###############################################################################
+###############################################################################
+###############################################################################
+Correcciones al 20-10-2014
+	#WEB
+		REFACTORING
+		- header/menu/footer pasa a ser llamado con un include
+		- TODOS los archivos relacionados al SITIO (no sistema) fueron
+		limpiados: identación y borrado de código basura
+
+		Index
+		- Cuando se entraba al sitio, debajo del botón rojo de "Libro de 
+		visitas" aparecía un botón "Tweets por" y luego desaparecía. Este, fue
+		removido cambiando las propiedades del css
+		- Se les cambiaron los estilos al Facebook LikeBox
+
+		Galería
+		- Se eliminaron las descripciones de las imágenes; cuando decidan 
+		agregarle algo lo cambiamos, sino lo dejamos así que queda bien igual.
+
+		Libro de visitas-PUBLICAR
+		- Se agregó un reCaptcha
+		- Cuando el reCaptcha o los datos son erroneos, redirije a una nueva 
+		url de error (libro-de-visitas-error.php)
+
+		Contacto
+		- Agregar y configurar reCaptcha en Contacto; creo que conviene implementar
+		mail() de PHP en lugar de PHPMailer como estabamos intentando
+
+	#SISTEMA
+		- LIMITAR LA VISUALIZACIÓN DEL TÍTULO YA QUE DEFORMA TODO: arreglado por
+		Nicks
+		- AL CLICKEAR EN EDITAR NOTICIA, NO ME MUESTRA EL TITULO COMPLETO: arreglado
+		por Nicks
+		- PUBLICA NOTICIAS VACIAS: titulo y cuerpo son REQUIRED
+		- SE PUEDEN CREAR USUARIOS SIN CAMPOS COMPLETADOS: todos los campos ahora 
+		son REQUIRED
